@@ -1,0 +1,79 @@
+{
+  "$schema": "https://opendoc.dev/schema/odoc/1.0.0.json",
+  "odoc": "1.0.0",
+  "id": "urn:odoc:test/annotated",
+  "meta": {
+    "title": "Annotated test document",
+    "created_at": "2026-03-17T00:00:00Z",
+    "source": {
+      "uri": "https://example.com/filing.html",
+      "media_type": "text/html",
+      "retrieved_at": "2026-03-17T00:00:00Z"
+    }
+  },
+  "content": [
+    {
+      "id": "p1",
+      "type": "paragraph",
+      "content": [
+        {"id": "t1", "type": "text", "text": "Acme Corp reported revenue of "},
+        {"id": "t2", "type": "text", "text": "$1.2B", "marks": [{"type": "strong"}]},
+        {"id": "t3", "type": "text", "text": " in Q3 2025."}
+      ],
+      "prov_refs": ["pr1"]
+    }
+  ],
+  "annotations": [
+    {
+      "id": "a1",
+      "type": "entities:mention",
+      "target": {
+        "kind": "text_range",
+        "start": {"node": "t1", "offset": 0},
+        "end": {"node": "t1", "offset": 9}
+      },
+      "body": {
+        "uri": "urn:entity:acme-corp",
+        "role": "subject",
+        "label": "Acme Corp"
+      }
+    },
+    {
+      "id": "a2",
+      "type": "data:value",
+      "target": {
+        "kind": "text_range",
+        "start": {"node": "t2", "offset": 0},
+        "end": {"node": "t2", "offset": 5}
+      },
+      "body": {
+        "value": 1200000000,
+        "unit": "USD",
+        "concept": "revenue",
+        "period": "2025-Q3"
+      },
+      "prov_refs": ["pr1", "pr2"]
+    }
+  ],
+  "provenance": [
+    {
+      "id": "pr1",
+      "kind": "source",
+      "body": {
+        "source": "https://example.com/filing.html",
+        "location": "§3, para.1",
+        "method": "extracted",
+        "agent": "html-parser/0.1.0"
+      }
+    },
+    {
+      "id": "pr2",
+      "kind": "assertion",
+      "body": {
+        "method": "llm_extract",
+        "agent": "claude-sonnet-4-20250514",
+        "confidence": 0.95
+      }
+    }
+  ]
+}

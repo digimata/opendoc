@@ -1,4 +1,6 @@
-// TODO: Core types — Document, Block, InlineNode, Mark, Annotation, Target, Provenance, Version
-// TODO: Serde — lossless JSON roundtrip
-// TODO: Renderers — render::markdown(&doc) -> String
-// TODO: Builder API
+pub mod types;
+
+pub use types::{
+    Annotation, Block, BoundaryPoint, Context, Document, InlineNode, ListItem, Mark, Meta,
+    MetaSource, ProvenanceBody, ProvenanceKind, ProvenanceRecord, Target,
+};

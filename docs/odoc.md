@@ -164,7 +164,7 @@ Core block types:
   "type": "paragraph",
   "content": [
     {"id": "t1", "type": "text", "text": "All endpoints now require "},
-    {"id": "t2", "type": "text", "text": "Bearer token authentication", "marks": ["strong"]},
+    {"id": "t2", "type": "text", "text": "Bearer token authentication", "marks": [{"type": "strong"}]},
     {"id": "t3", "type": "text", "text": " — API keys are deprecated."}
   ]
 }
@@ -192,18 +192,18 @@ Core block types:
   "type": "list",
   "ordered": true,
   "items": [
-    {"id": "li1", "content": [{"id": "t5", "type": "text", "text": "Update your auth headers"}]},
-    {"id": "li2", "content": [
+    {"id": "li1", "content": [{"id": "p-li1", "type": "paragraph", "content": [{"id": "t5", "type": "text", "text": "Update your auth headers"}]}]},
+    {"id": "li2", "content": [{"id": "p-li2", "type": "paragraph", "content": [
       {"id": "t6", "type": "text", "text": "Replace "},
-      {"id": "t7", "type": "text", "text": "/v1/", "marks": ["code"]},
+      {"id": "t7", "type": "text", "text": "/v1/", "marks": [{"type": "code"}]},
       {"id": "t8", "type": "text", "text": " paths with "},
-      {"id": "t9", "type": "text", "text": "/v2/", "marks": ["code"]}
-    ]}
+      {"id": "t9", "type": "text", "text": "/v2/", "marks": [{"type": "code"}]}
+    ]}]}
   ]
 }
 ```
 
-Items can contain inline content or nested blocks (for multi-paragraph list items).
+List item `content` is always `Block[]`. Single-paragraph items wrap their inline content in a paragraph block.
 
 #### `blockquote`
 
@@ -287,12 +287,12 @@ Inline elements live inside block `content` arrays. Core inline nodes are `text`
 
 ```json
 {"id": "t11", "type": "text", "text": "plain text"}
-{"id": "t12", "type": "text", "text": "bold text", "marks": ["strong"]}
+{"id": "t12", "type": "text", "text": "bold text", "marks": [{"type": "strong"}]}
 {"id": "t13", "type": "text", "text": "linked text", "marks": [{"type": "link", "href": "https://example.com/docs/auth"}]}
 {"id": "br1", "type": "hard_break"}
 ```
 
-Simple marks may be written as bare strings. Marks that need extra fields are written inline as objects inside the `marks` array:
+All marks are objects with a `type` field. Marks with extra fields include those fields alongside `type`:
 
 ```json
 {
@@ -332,8 +332,7 @@ Marks are inline formatting applied to text nodes. Core mark vocabulary:
 
 Encoding rules:
 
-- Simple marks MAY be written as bare strings: `"strong"`, `"em"`, `"code"`.
-- Marks with extra fields MUST be written as objects with a `type` field.
+- All marks MUST be written as objects with a `type` field.
 - Consumers MUST preserve mark order within a text node.
 - `link` is for navigational/rendered hyperlinks. Typed semantic relationships between documents or sections belong in `xref:link` annotations, not marks.
 - `footnote.note` is plain text in core v0. Structured or richly formatted footnotes SHOULD be modeled as appendix content plus `xref:link`.
@@ -341,7 +340,7 @@ Encoding rules:
 Examples:
 
 ```json
-{"id": "t17", "type": "text", "text": "important", "marks": ["strong", "underline"]}
+{"id": "t17", "type": "text", "text": "important", "marks": [{"type": "strong"}, {"type": "underline"}]}
 {"id": "t18", "type": "text", "text": "docs", "marks": [{"type": "link", "href": "https://example.com/docs"}]}
 {"id": "t19", "type": "text", "text": "beta", "marks": [{"type": "highlight", "color": "yellow"}]}
 {"id": "t20", "type": "text", "text": "1", "marks": [{"type": "footnote", "note": "Legacy endpoints remain available until 2025-06-01."}]}
@@ -438,7 +437,7 @@ Content:
   "type": "paragraph",
   "content": [
     {"id": "t20", "type": "text", "text": "Acme "},
-    {"id": "t21", "type": "text", "text": "Corp", "marks": ["strong"]},
+    {"id": "t21", "type": "text", "text": "Corp", "marks": [{"type": "strong"}]},
     {"id": "t22", "type": "text", "text": " migrated "},
     {"id": "t23", "type": "text", "text": "14,000"},
     {"id": "t24", "type": "text", "text": " endpoints to v2 in under "},
@@ -868,3 +867,5 @@ The `changes` array is an explicit structured diff — `node_id`, `path`, `from`
 7. **Overlapping annotations.** Two annotations can target overlapping character ranges on the same text node. The spec currently allows this silently. Should it define precedence or merging rules?
 
 8. **Annotation ordering.** Does the order of annotations in the array carry semantics, or is it arbitrary?
+
+9. **Provenance as core vs extension.** Provenance is currently a first-class top-level field alongside `content` and `annotations`. An alternative is to model it as a vocabulary extension — provenance records would live in the annotation layer rather than having their own top-level registry. The argument for core: lineage tracking is fundamental infrastructure. The argument for extension: it adds weight to the envelope for documents that don't need it, and `prov_refs` pollutes every block/inline/annotation type.

@@ -1,0 +1,178 @@
+{
+  "$schema": "https://opendoc.dev/schema/odoc/1.0.0.json",
+  "odoc": "1.0.0",
+  "id": "urn:odoc:test/full",
+  "@context": "https://opendoc.dev/ns/v1",
+  "meta": {
+    "title": "Full coverage test document",
+    "created_at": "2026-03-17T00:00:00Z",
+    "modified_at": "2026-03-17T12:00:00Z",
+    "producer": "test-suite/1.0.0",
+    "language": "en",
+    "source": {
+      "uri": "https://example.com/source.html",
+      "media_type": "text/html",
+      "retrieved_at": "2026-03-17T00:00:00Z"
+    },
+    "tags": ["test", "full-coverage"]
+  },
+  "content": [
+    {
+      "id": "h1",
+      "type": "heading",
+      "level": 1,
+      "content": [{"id": "t-h1", "type": "text", "text": "Full Coverage Document"}],
+      "anchor": "top"
+    },
+    {
+      "id": "p1",
+      "type": "paragraph",
+      "content": [
+        {"id": "t1", "type": "text", "text": "Plain text, "},
+        {"id": "t2", "type": "text", "text": "bold", "marks": [{"type": "strong"}]},
+        {"id": "t3", "type": "text", "text": ", "},
+        {"id": "t4", "type": "text", "text": "italic", "marks": [{"type": "em"}]},
+        {"id": "t5", "type": "text", "text": ", "},
+        {"id": "t6", "type": "text", "text": "code", "marks": [{"type": "code"}]},
+        {"id": "t7", "type": "text", "text": ", "},
+        {"id": "t8", "type": "text", "text": "struck", "marks": [{"type": "strikethrough"}]},
+        {"id": "t9", "type": "text", "text": ", "},
+        {"id": "t10", "type": "text", "text": "underlined", "marks": [{"type": "underline"}]},
+        {"id": "t11", "type": "text", "text": ", "},
+        {"id": "t12", "type": "text", "text": "sup", "marks": [{"type": "sup"}]},
+        {"id": "t13", "type": "text", "text": ", "},
+        {"id": "t14", "type": "text", "text": "sub", "marks": [{"type": "sub"}]},
+        {"id": "t15", "type": "text", "text": ", "},
+        {"id": "t16", "type": "text", "text": "link", "marks": [{"type": "link", "href": "https://example.com", "title": "Example"}]},
+        {"id": "t17", "type": "text", "text": ", "},
+        {"id": "t18", "type": "text", "text": "highlighted", "marks": [{"type": "highlight", "color": "yellow"}]},
+        {"id": "t19", "type": "text", "text": ", "},
+        {"id": "t20", "type": "text", "text": "1", "marks": [{"type": "footnote", "note": "A footnote."}]},
+        {"id": "t21", "type": "text", "text": "."}
+      ]
+    },
+    {
+      "id": "p-br",
+      "type": "paragraph",
+      "content": [
+        {"id": "t-br1", "type": "text", "text": "Line one"},
+        {"id": "br1", "type": "hard_break"},
+        {"id": "t-br2", "type": "text", "text": "Line two"}
+      ]
+    },
+    {
+      "id": "l1",
+      "type": "list",
+      "ordered": true,
+      "items": [
+        {
+          "id": "li1",
+          "content": [
+            {"id": "p-li1", "type": "paragraph", "content": [{"id": "t-li1", "type": "text", "text": "First item"}]}
+          ]
+        },
+        {
+          "id": "li2",
+          "content": [
+            {"id": "p-li2", "type": "paragraph", "content": [{"id": "t-li2", "type": "text", "text": "Second item"}]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l2",
+      "type": "list",
+      "ordered": false,
+      "items": [
+        {
+          "id": "li3",
+          "content": [
+            {"id": "p-li3", "type": "paragraph", "content": [{"id": "t-li3", "type": "text", "text": "Unordered item"}]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q1",
+      "type": "blockquote",
+      "content": [
+        {
+          "id": "p-q1",
+          "type": "paragraph",
+          "content": [{"id": "t-q1", "type": "text", "text": "A quoted passage."}]
+        }
+      ],
+      "attribution": "Someone"
+    },
+    {
+      "id": "c1",
+      "type": "code",
+      "language": "json",
+      "text": "{\"key\": \"value\"}"
+    },
+    {
+      "id": "tbl1",
+      "type": "table",
+      "columns": ["Name", "Value"],
+      "rows": [
+        ["alpha", "1"],
+        ["beta", "2"]
+      ],
+      "caption": "Test table"
+    },
+    {
+      "id": "img1",
+      "type": "image",
+      "src": "https://example.com/image.png",
+      "alt": "An example image",
+      "caption": "Figure 1"
+    },
+    {
+      "id": "d1",
+      "type": "divider"
+    },
+    {
+      "id": "emb1",
+      "type": "embed",
+      "src": "urn:osheet:test/data",
+      "media_type": "application/vnd.osheet+json",
+      "title": "Embedded sheet"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "a1",
+      "type": "entities:mention",
+      "target": {"kind": "node", "node": "p1"},
+      "body": {"uri": "urn:entity:test", "label": "Test Entity"}
+    },
+    {
+      "id": "a2",
+      "type": "xref:link",
+      "target": {"kind": "node_range", "start": "p1", "end": "p-br"},
+      "body": {"href": "urn:odoc:other/doc", "rel": "references"}
+    }
+  ],
+  "provenance": [
+    {
+      "id": "pr1",
+      "kind": "source",
+      "body": {
+        "source": "https://example.com/source.html",
+        "location": "page 1",
+        "method": "extracted",
+        "agent": "test-parser/1.0.0",
+        "confidence": 0.99
+      }
+    },
+    {
+      "id": "pr2",
+      "kind": "derived",
+      "body": {
+        "method": "normalization",
+        "agent": "normalizer/1.0.0",
+        "input_refs": ["pr1"]
+      }
+    }
+  ]
+}

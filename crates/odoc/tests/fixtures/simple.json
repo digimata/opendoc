@@ -1,0 +1,46 @@
+{
+  "$schema": "https://opendoc.dev/schema/odoc/1.0.0.json",
+  "odoc": "1.0.0",
+  "id": "urn:odoc:test/simple",
+  "meta": {
+    "title": "Simple test document",
+    "created_at": "2026-03-17T00:00:00Z",
+    "producer": "test"
+  },
+  "content": [
+    {
+      "id": "h1",
+      "type": "heading",
+      "level": 1,
+      "content": [
+        {"id": "t1", "type": "text", "text": "Introduction"}
+      ]
+    },
+    {
+      "id": "p1",
+      "type": "paragraph",
+      "content": [
+        {"id": "t2", "type": "text", "text": "This is a "},
+        {"id": "t3", "type": "text", "text": "simple", "marks": [{"type": "strong"}]},
+        {"id": "t4", "type": "text", "text": " test document."}
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "code",
+      "language": "rust",
+      "text": "fn main() {\n    println!(\"hello\");\n}"
+    },
+    {
+      "id": "d1",
+      "type": "divider"
+    },
+    {
+      "id": "p2",
+      "type": "paragraph",
+      "content": [
+        {"id": "t5", "type": "text", "text": "End."}
+      ]
+    }
+  ]
+}
