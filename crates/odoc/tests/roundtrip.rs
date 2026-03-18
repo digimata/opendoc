@@ -12,17 +12,17 @@ fn roundtrip(json_str: &str) {
 
 #[test]
 fn roundtrip_simple() {
-    roundtrip(include_str!("fixtures/simple.json"));
+    roundtrip(include_str!("corpus/json/simple.json"));
 }
 
 #[test]
 fn roundtrip_annotated() {
-    roundtrip(include_str!("fixtures/annotated.json"));
+    roundtrip(include_str!("corpus/json/annotated.json"));
 }
 
 #[test]
 fn roundtrip_full() {
-    roundtrip(include_str!("fixtures/full.json"));
+    roundtrip(include_str!("corpus/json/full.json"));
 }
 
 #[test]
