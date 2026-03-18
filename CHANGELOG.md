@@ -9,6 +9,8 @@ outline: |
 
 ## 0.2.0 — 2026-03-17
 
+- CLI: `odoc convert` — markdown → .odoc JSON (stdin/file, stdout/file, `--pretty`)
+- CLI: `odoc render` — .odoc → markdown or JSON (stdin/file, stdout/file, `-f md|json`)
 - Consumer API: `io` module — `from_str`/`from_path`/`to_string`/`to_path` and friends for reading and writing `.odoc` JSON
 - Consumer API: `query` module — `DocumentIndex` for O(1) node/annotation lookup, `NodeRef` enum, inherent helpers on `Block`/`InlineNode`/`Annotation`/`Target`
 - Consumer API: `render` module — `Render` trait and `MarkdownRenderer` for odoc → GFM markdown (feature-gated: `render-markdown`)
