@@ -1,5 +1,13 @@
 use serde::{Deserialize, Serialize};
 
+// -------------------------------
+// projects/opendoc/crates/odoc/src/types/annotation.rs
+//
+// pub struct Annotation       L16
+// pub enum Target             L29
+// pub struct BoundaryPoint    L46
+// -------------------------------
+
 /// A semantic annotation targeting content nodes by ID.
 ///
 /// The annotation body is opaque JSON — its schema depends on the annotation type

@@ -1,8 +1,17 @@
 [package]
 name = "odoc"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 
 [dependencies]
+pulldown-cmark = { version = "0.13.1", features = ["simd"], optional = true }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+thiserror = "2"
+
+[features]
+default = ["render-markdown"]
+render = []
+render-markdown = ["render"]
+convert = []
+convert-markdown = ["convert", "dep:pulldown-cmark"]

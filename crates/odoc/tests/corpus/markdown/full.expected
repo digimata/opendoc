@@ -1,0 +1,32 @@
+# Full Coverage Document
+
+Plain text, **bold**, *italic*, `code`, ~~struck~~, underlined, sup, sub, [link](https://example.com), highlighted, 1[^A footnote.].
+
+Line one  
+Line two
+
+1. First item
+2. Second item
+
+- Unordered item
+
+> A quoted passage.
+
+```json
+{"key": "value"}
+```
+
+| Name | Value |
+| ---- | ----- |
+| alpha | 1     |
+| beta | 2     |
+
+*Test table*
+
+![An example image](https://example.com/image.png)
+
+*Figure 1*
+
+---
+
+[Embedded sheet](urn:osheet:test/data)

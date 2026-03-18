@@ -5,9 +5,9 @@ outline: |
     ◦ What it looks like      L19
     ◦ Design                  L60
     ◦ Formats                 L71
-    ◦ Workspace               L81
-    ◦ Status                  L89
-    ◦ Specs                   L93
+    ◦ Workspace               L79
+    ◦ Status                  L87
+    ◦ Specs                   L91
 ---
 
 # OpenDoc

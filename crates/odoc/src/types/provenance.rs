@@ -1,5 +1,13 @@
 use serde::{Deserialize, Serialize};
 
+// ----------------------------------
+// projects/opendoc/crates/odoc/src/types/provenance.rs
+//
+// pub struct ProvenanceRecord    L13
+// pub enum ProvenanceKind        L22
+// pub struct ProvenanceBody      L33
+// ----------------------------------
+
 /// A provenance record — tracks where content or annotations came from.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct ProvenanceRecord {

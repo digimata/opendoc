@@ -2,6 +2,13 @@ use serde::{Deserialize, Serialize};
 
 use super::InlineNode;
 
+// --------------------------
+// projects/opendoc/crates/odoc/src/types/block.rs
+//
+// pub enum Block         L15
+// pub struct ListItem    L97
+// --------------------------
+
 /// A block-level node in the document content tree.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(tag = "type")]

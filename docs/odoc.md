@@ -20,29 +20,29 @@ outline: |
         · embed                                    L270
       ▪ 3.2 — Inline content                       L284
       ▪ 3.3 — Marks                                L316
-    ◦ 4. Annotations                               L352
-      ▪ 4.1 — Annotation structure                 L356
-      ▪ 4.2 — Targets                              L382
-      ▪ 4.3 — Example: annotated paragraph         L431
-    ◦ 5. Provenance                                L492
-      ▪ 5.1 — Attachments                          L496
-      ▪ 5.2 — Provenance record structure          L527
-      ▪ 5.3 — Core provenance kinds                L564
-        · source                                   L574
-        · assertion                                L591
-        · derived                                  L607
-    ◦ 6. Vocabulary Extensions                     L632
-      ▪ 6.1 — Extension rules                      L636
-      ▪ 6.2 — Bundled standard vocabularies        L647
-        · odoc.entities.v1 — entity linking        L651
-        · odoc.data.v1 — structured data           L680
-        · odoc.xref.v1 — cross-references          L713
-      ▪ 6.3 — Domain vocabularies                  L747
-    ◦ 7. Versioning                                L785
-      ▪ 7.1 — Version types                        L810
-      ▪ 7.2 — Version resolution                   L819
-    ◦ 8. Serialization                             L830
-    ◦ 9. Open Questions                            L854
+    ◦ 4. Annotations                               L351
+      ▪ 4.1 — Annotation structure                 L355
+      ▪ 4.2 — Targets                              L381
+      ▪ 4.3 — Example: annotated paragraph         L430
+    ◦ 5. Provenance                                L491
+      ▪ 5.1 — Attachments                          L495
+      ▪ 5.2 — Provenance record structure          L526
+      ▪ 5.3 — Core provenance kinds                L563
+        · source                                   L573
+        · assertion                                L590
+        · derived                                  L606
+    ◦ 6. Vocabulary Extensions                     L631
+      ▪ 6.1 — Extension rules                      L635
+      ▪ 6.2 — Bundled standard vocabularies        L646
+        · odoc.entities.v1 — entity linking        L650
+        · odoc.data.v1 — structured data           L679
+        · odoc.xref.v1 — cross-references          L712
+      ▪ 6.3 — Domain vocabularies                  L746
+    ◦ 7. Versioning                                L784
+      ▪ 7.1 — Version types                        L809
+      ▪ 7.2 — Version resolution                   L818
+    ◦ 8. Serialization                             L829
+    ◦ 9. Open Questions                            L853
 ---
 
 # OpenDoc :: Specification

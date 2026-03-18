@@ -1,5 +1,18 @@
 use odoc::Document;
 
+// ---------------------------------------
+// projects/opendoc/crates/odoc/tests/roundtrip.rs
+//
+// fn roundtrip()                      L18
+// fn roundtrip_simple()               L27
+// fn roundtrip_annotated()            L32
+// fn roundtrip_full()                 L37
+// fn all_mark_variants()              L42
+// fn all_target_variants()            L63
+// fn all_provenance_kinds()           L79
+// fn all_block_types_deserialize()    L92
+// ---------------------------------------
+
 /// Deserialize a fixture, re-serialize, and compare against the original JSON
 /// using Value equality (order-insensitive for objects).
 fn roundtrip(json_str: &str) {

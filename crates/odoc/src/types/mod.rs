@@ -10,6 +10,19 @@ pub use provenance::{ProvenanceBody, ProvenanceKind, ProvenanceRecord};
 
 use serde::{Deserialize, Serialize};
 
+// ----------------------------
+// projects/opendoc/crates/odoc/src/types/mod.rs
+//
+// mod annotation            L1
+// mod block                 L2
+// mod inline                L3
+// mod provenance            L4
+// pub struct Document      L28
+// pub struct Meta          L45
+// pub struct MetaSource    L62
+// pub enum Context         L73
+// ----------------------------
+
 /// Top-level `OpenDoc` document envelope.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Document {

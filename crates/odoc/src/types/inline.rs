@@ -1,5 +1,12 @@
 use serde::{Deserialize, Serialize};
 
+// --------------------------
+// projects/opendoc/crates/odoc/src/types/inline.rs
+//
+// pub enum InlineNode    L13
+// pub enum Mark          L30
+// --------------------------
+
 /// An inline node within block content.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(tag = "type")]
