@@ -1,15 +1,3 @@
----
-path: projects/opendoc/README.md
-outline: |
-  • OpenDoc                   L13
-    ◦ What it looks like      L19
-    ◦ Design                  L60
-    ◦ Formats                 L71
-    ◦ Workspace               L79
-    ◦ Status                  L87
-    ◦ Specs                   L91
----
-
 # OpenDoc
 
 An agent-friendly structured document format.
